@@ -3,7 +3,7 @@ backend:
   phases:
     build:
       commands:
-        - yarn ci --cache .npm --prefer-offline
+        - yarn install --cache-folder .npm
         - yarn ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
 frontend:
   phases:
