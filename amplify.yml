@@ -3,7 +3,7 @@ backend:
   phases:
     build:
       commands:
-        - yarn install --cache-folder .npm
+        - yarn install --offline --cache-folder .yarn
         - yarn ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
 frontend:
   phases:
@@ -18,4 +18,5 @@ frontend:
     paths:
       - .next/cache/**/*
       - .npm/**/*
+      - .yarn/**/*
       - node_modules/**/*
